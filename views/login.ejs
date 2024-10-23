@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-label,.mb-4{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: 300;
+            color: rgb(43, 36, 49);
+
+        }
+        .card {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* เพิ่ม shadow ให้ฟอร์ม */
+            border-radius: 10px; /* ปรับขอบให้โค้งมน */
+            background-color:rgba(35, 126, 106, 0.541);
+        }
+        .min-vh-100 {
+            min-height: 100vh; /* ให้ฟอร์มใช้พื้นที่เต็มหน้าจอในแนวตั้ง */
+        }
+        @media (max-width: 576px) {
+            /* ปรับฟอร์มสำหรับหน้าจอที่เล็กกว่า 576px */
+            .card {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.5rem; /* ปรับขนาดของหัวข้อให้เล็กลงในมือถือ */
+            }
+        }
+        @media (min-width: 1200px) {
+            /* ปรับฟอร์มสำหรับหน้าจอใหญ่พิเศษ */
+            .card {
+                padding: 40px;
+            }
+        }
+        .btn{
+            background-color:rgb(15, 19, 39);
+            border: rgb(15, 19, 39)
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="row w-100">
+            <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-10 mx-auto">
+                <div class="card p-4">
+                    <h1 class="text-center mb-4">ATTENDANCE</h1>
+                    <form id="loginForm" action="/api/login" method="POST">
+                        <div class="mb-3">
+                            <label for="username" class="form-label text-center w-100">USERNAME</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label text-center w-100">PASSWORD</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">LOGIN</button>
+                    </form>
+                    <p id="message" class="mt-3 text-center"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
